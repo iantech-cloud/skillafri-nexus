@@ -6,11 +6,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Dev Hub", href: "#dev-hub" },
-    { name: "Academic Support", href: "#academic" },
-    { name: "Blog", href: "#blog" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Dev Hub", href: "/dev-hub" },
+    { name: "Academic Support", href: "/academic-support" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
@@ -42,7 +42,9 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">Login</Button>
+            <Button variant="ghost" asChild>
+              <a href="/auth/login">Login</a>
+            </Button>
             <Button variant="hero">Get Started</Button>
           </div>
 
@@ -73,7 +75,9 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-2">
-                <Button variant="ghost" className="justify-start">Login</Button>
+                <Button variant="ghost" className="justify-start" asChild>
+                  <a href="/auth/login">Login</a>
+                </Button>
                 <Button variant="hero" className="justify-start">Get Started</Button>
               </div>
             </div>
